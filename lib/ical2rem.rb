@@ -198,17 +198,14 @@ class Ical2Rem
       # +3
       print " +#{@options.lead}"
 
-      # The message of the event. If +DTSTART+ is a DATE-TIME object, the
-      # starting time is also printed by inserting the variable "%3".
-      print " MSG %a"
-      if is_datetime
-        print " %3"
-      end
+      print " MSG"
       print " %\"#{event.summary}" 
 
       # If a location for the event is given, we add it to the message.
       print " at #{event.location}" if event.location
-      puts "\%\"%"
+      # t() is defined as:
+      # FSET t() iif($Daemon > 0, "%1", "%b %2")
+      puts "\%\" [t()]\%"
     end
   end
 
