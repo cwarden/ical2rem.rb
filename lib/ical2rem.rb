@@ -203,12 +203,15 @@ class Ical2Rem
       # AT 10:00 DURATION 2:0
       if is_datetime
         print " AT #{vstart.strftime("%H:%M")}"
-        print " DURATION #{duration / 3600}:#{(duration % 3600) / 60}"
       end
 
       # The advance minutes to show this entry, e.g.
       # +3
       print " +#{@options.lead}"
+
+      if is_datetime
+        print " DURATION #{duration / 3600}:#{(duration % 3600) / 60}"
+      end
 
       print " MSG"
       print " %\"#{event.summary}" 
