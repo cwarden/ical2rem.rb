@@ -214,6 +214,9 @@ class Ical2Rem
       print " %\"#{event.summary}" 
 
       # If a location for the event is given, we add it to the message.
+      if event.location == "Online Meeting"
+        event.location = event.description[/Join online meeting<([^>]+)/, 1]
+      end
       print " at #{event.location}" if event.location
       # t() is defined as:
       # FSET t() iif($Daemon > 0, "%1", "%b %2")

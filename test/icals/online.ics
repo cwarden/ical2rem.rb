@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+METHOD:REQUEST
+PRODID:Microsoft Exchange Server 2010
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:Pacific Standard Time
+BEGIN:STANDARD
+DTSTART:16010101T020000
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0800
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=1SU;BYMONTH=11
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T020000
+TZOFFSETFROM:-0800
+TZOFFSETTO:-0700
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=2SU;BYMONTH=3
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+DESCRIPTION;LANGUAGE=en-US:\n..............................................
+ ..........................................................................
+ .................\nJoin online meeting<https://www.example.com/meet/me/at/
+ 123456>\nhttps://www.example.com/meet/me/at/123456\n\nJoin by Phone\nUS To
+ ll Free: 1 (877) 555 1234\, Intl: 001 * (555) 555 1234\nFind a local numbe
+ r<https://dialinxx.example.com>\n\nConference ID: 123456\n\n Forgot your d
+ ial-in PIN?<https://dialinxx.example.com> |  First online meeting?<http://
+ r.office.microsoft.com/r/rlidOC10?clid=1033&p1=4&p2=1041&pc=oc&ver=4&subve
+ r=0&bld=7185&bldver=0>\n[!OC([1033])!]\n..................................
+ ..........................................................................
+ .............................\n\n\n
+SUMMARY;LANGUAGE=en-US:An online meeting
+DTSTART;TZID=Pacific Standard Time:20160325T120000
+DTEND;TZID=Pacific Standard Time:20160325T130000
+UID:040000008200E00074C5B7101A82E00800000000701EA3358586D101000000000000000
+ 0100000004505840720694543B1566577C7362B19
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20160325T175805Z
+TRANSP:OPAQUE
+STATUS:CONFIRMED
+SEQUENCE:0
+LOCATION;LANGUAGE=en-US:Online Meeting
+BEGIN:VALARM
+DESCRIPTION:REMINDER
+TRIGGER;RELATED=START:-PT15M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

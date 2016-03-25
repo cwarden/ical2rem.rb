@@ -131,4 +131,20 @@ describe Ical2Rem do
     end
 
   end
+
+  describe "Online meetings" do
+    before(:all) do
+      @cals = [
+        "online.ics"
+      ]
+      @cals.map! {|cal| @obj.load(File.open(File.dirname(__FILE__) + "/icals/#{cal}").read())}
+    end
+
+    it "should extract online URL" do
+      out = with_stdout_captured do
+        @obj.events_to_remind(@cals[0])
+      end
+      out.split("\n")[1].should include("at https://www.example.com/meet/me/at/123456")
+    end
+  end
 end
