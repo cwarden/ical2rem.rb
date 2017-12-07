@@ -215,7 +215,7 @@ class Ical2Rem
 
       # If a location for the event is given, we add it to the message.
       if event.location == "Online Meeting"
-        event.location = event.description[/Join online meeting<([^>]+)/, 1]
+        event.location = event.description[/(https.*?.gotomeeting.com\/join\/\d+)/, 1]
       end
       print " at #{event.location}" if event.location
       # t() is defined as:
